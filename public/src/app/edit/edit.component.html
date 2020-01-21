@@ -1,0 +1,28 @@
+<div class="outer">
+
+    <div *ngIf="errors">
+        <h4 class="left">Errors:</h4>
+        <ul>
+            <div *ngFor="let item of errors">
+                <li class="errors">{{item.message}}</li>
+            </div>
+        </ul>
+    </div>
+
+    <form (submit)="updateProduct(updateproduct._id)">
+        <div class="form-group">
+            <label for="name">Product Name:</label>
+            <input name="updateproduct.name" [(ngModel)]="updateproduct.name" class="form-control" id="name" placeholder="---">
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input name="updateproduct.price" [(ngModel)]="updateproduct.price" class="form-control" id="price" placeholder="---" type="number">
+        </div>
+        <div class="form-group">
+            <label for="url">Image Url:</label>
+            <input name="updateproduct.url" [(ngModel)]="updateproduct.url" class="form-control" id="url" placeholder="---">
+        </div>
+
+        <button class="btn btn-warning" type="submit">Submit Changes</button>
+    </form>
+</div>
